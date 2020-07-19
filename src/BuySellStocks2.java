@@ -18,7 +18,7 @@ public class BuySellStocks2 {
      return profit;
  }
 }
-//Exponential
+//Exponential solution using backtracking
 //public class Solution {
 //  public int maxProfit(final List<Integer> A) {
 //      return getProfit(0,false,A,0);
@@ -37,7 +37,7 @@ public class BuySellStocks2 {
 //  }
 //}
 
-//getting TLE even
+//Got TLE after memoization
 //public class Solution {
 //  static HashMap<String,Integer> hm;
 //  public int maxProfit(final List<Integer> A) {
