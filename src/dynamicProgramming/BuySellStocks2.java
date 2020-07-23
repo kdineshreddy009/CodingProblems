@@ -1,3 +1,4 @@
+package dynamicProgramming;
 //O(n)
 //Explanation: 
 //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/208241/Explanation-for-the-dummy-like-me.
