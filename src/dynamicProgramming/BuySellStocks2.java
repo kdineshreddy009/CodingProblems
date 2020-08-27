@@ -1,23 +1,24 @@
 package dynamicProgramming;
+
 //O(n)
 //Explanation: 
 //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/208241/Explanation-for-the-dummy-like-me.
 public class BuySellStocks2 {
- public int maxProfit(final int[] prices) {
-     int i=0,buy=0,sell=0,profit=0;
-     while(i<prices.length-1){
-         while(i<prices.length-1 && prices[i+1]<=prices[i]){
-             i++;
-         }
-         buy = prices[i];
-         while(i<prices.length-1 && prices[i+1]>=prices[i]){
-             i++;
-         }
-         sell=prices[i];
-         profit+=sell-buy;
-     }
-     return profit;
- }
+	public int maxProfit(final int[] prices) {
+		int i = 0, buy = 0, sell = 0, profit = 0;
+		while (i < prices.length - 1) {
+			while (i < prices.length - 1 && prices[i + 1] <= prices[i]) {
+				i++;
+			}
+			buy = prices[i];
+			while (i < prices.length - 1 && prices[i + 1] >= prices[i]) {
+				i++;
+			}
+			sell = prices[i];
+			profit += sell - buy;
+		}
+		return profit;
+	}
 }
 //Exponential solution using backtracking
 //public class Solution {
@@ -62,4 +63,3 @@ public class BuySellStocks2 {
 //      return hm.get(val+""+canSell+""+i);
 //  }
 //}
-
