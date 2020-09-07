@@ -23,12 +23,12 @@ public class Solution {
         if(hm.containsKey(i+"$"+j)){
             return hm.get(i+"$"+j);
         }
-//If character at current index matches, we will add 1 to solution
+		//If character at current index matches, we will add 1 to solution
         if(s1.charAt(i)==s2.charAt(j)){
             hm.put(i+"$"+j,1+lcs(s1,i-1,s2,j-1));
             return hm.get(i+"$"+j);
         }else{
-//If Characters doesn't match, we'll recursively call 
+		//If Characters doesn't match, we'll recursively call 
             hm.put(i+"$"+j,Math.max(lcs(s1,i-1,s2,j),lcs(s1,i,s2,j-1)));
             return hm.get(i+"$"+j);
         }
