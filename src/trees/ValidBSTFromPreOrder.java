@@ -67,8 +67,6 @@ public class ValidBSTFromPreOrder {
 			root.right = formBST(al, root.val, rightB);
 		}
 		System.out.println(root.val);
-//		System.out.println(root.left);
-//		System.out.println(root.right);
 		return root;
 	}
 

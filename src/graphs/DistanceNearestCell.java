@@ -10,15 +10,16 @@ import java.util.Queue;
  */
 public class DistanceNearestCell {
 /*
- * Function to find the distance of nearest cell having 1 mat: The input matrix
- * of 0s and 1s N, M: rows and cols in given matrix Return the resultant matrix
+ * Function to find the distance of nearest cell having 1 
+ * mat: The input matrix of 0s and 1s 
+ * N, M: rows and cols in given matrix Return the resultant matrix
  * of size (N x M) representing the nearest distance 1 from each cell
  */
 	static ArrayList<ArrayList<Integer>> nearest(ArrayList<ArrayList<Integer>> mat, int N, int M) {
 		Queue<String> q = new LinkedList<>();
-// 1.we will be doing BFS at each node(starts with node having 1s)
-// 2.Then continue on newly formed nodes by pushing into queue
-// 3.we will separate each level of BFS with a delimiter
+		// 1.we will be doing BFS at each node(starts with node having 1s)
+		// 2.Then continue on newly formed nodes by pushing into queue
+		// 3.we will separate each level of BFS with a delimiter
 		for (int i = 0; i < mat.size(); i++) {
 			for (int j = 0; j < mat.get(0).size(); j++) {
 				if (mat.get(i).get(j) == 1)
@@ -36,7 +37,7 @@ public class DistanceNearestCell {
 			q.poll();
 			int cur = dist + mat.get(row).get(col);
 			
-// checking four sides of a cell for 0s
+			// checking four sides of a cell for 0s
 			if (row - 1 >= 0) {
 				if (mat.get(row - 1).get(col) == 0) {
 					mat.get(row - 1).set(col, cur);
@@ -64,11 +65,11 @@ public class DistanceNearestCell {
 				}
 			}
 			
-// Mark given 1s as 0s, to turn them off at end as dist=0 for them  
+			// Mark given 1s as 0s, to turn them off at end as dist=0 for them  
 			if (dist == 0) {
 				mat.get(row).set(col, -1);
 			}
-// we will complete level in BFS & reach a delimiter, so check & append delimiter for next level at end  
+			// we will complete level in BFS & reach a delimiter, so check & append delimiter for next level at end  
 			if (q.peek() == "delimiter") {
 				q.poll();
 				if (!q.isEmpty()) {
@@ -78,7 +79,7 @@ public class DistanceNearestCell {
 				}
 			}
 		}
-// turn real 1s to 0s
+		// turn real 1s to 0s
 		for (int i = 0; i < mat.size(); i++) {
 			for (int j = 0; j < mat.get(0).size(); j++) {
 				if (mat.get(i).get(j) == -1)
